@@ -11,6 +11,7 @@ let passChar = [];
 let charType
 let char2
 let char3
+let password = "";
 
 function random(max) {
   return Math.floor(Math.random()* max);
@@ -23,6 +24,7 @@ function selectPassword() {
   }
 
   else {
+    password = "";
     passGen();
   }
 }
@@ -63,7 +65,7 @@ function passwordLength() {
       charType = random(passChar.length);
       char2 = (random(passChar[charType].length));
       char3 = passChar[charType][char2];
-      console.log(char3);
+      password += char3;
     }
   }
 
@@ -74,16 +76,14 @@ function passwordLength() {
   passChar = [];
 }
 
-console.log(characters[6]);
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
   selectPassword();
-  // var passwordText = document.querySelector("#password");
-  // passwordText.value = password
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password
 }
 
 // Add event listener to generate button
