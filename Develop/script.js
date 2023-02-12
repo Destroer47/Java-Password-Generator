@@ -45,7 +45,6 @@ function passGen() {
   if(specialCase.checked) {
     passChar.push(specialChar);
   }
-  console.log(passChar);
   passwordLength();
 }
 
